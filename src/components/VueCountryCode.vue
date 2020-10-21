@@ -29,8 +29,7 @@
           >
           <input 
             v-model="searchText"
-            :placeholder="searchPlaceholderText" 
-            style="width: 100%;" 
+            :placeholder="searchPlaceholderText"
             type="text" 
           >
         </li>
@@ -352,6 +351,13 @@ export default {
 
 .vue-country-select .search-field{
   padding: 10px;
+}
+
+.vue-country-select .search-field input{
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding-left: 8px;
 }
 
 .vue-country-select:focus-within {
