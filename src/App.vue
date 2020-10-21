@@ -6,6 +6,7 @@
       <vue-country-code
         @onSelect="onSelect"
         :preferredCountries="['vn', 'us', 'gb']"
+        enableSearchField
         defaultCountry=""
       ></vue-country-code>
     </div>

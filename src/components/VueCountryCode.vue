@@ -131,14 +131,13 @@ export default {
       selectedIndex: null,
       typeToFindInput: "",
       typeToFindTimer: null,
-      typeToFindTimer: null,
       searchText: ''
     };
   },
   computed: {
     filteredCountries() {
       // List countries after filtered
-      
+
       if(this.searchText.length){
         return allCountries.filter(country => {
           return country.name.toLowerCase().includes(this.searchText.toLowerCase())
