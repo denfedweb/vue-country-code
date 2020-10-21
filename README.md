@@ -1,4 +1,4 @@
-# vue-country-code
+# vue-country-code-select
 
 Country Code Select with Vue.
 
@@ -8,11 +8,11 @@ Checkout Demo at [Github pages](https://hantrongbinh.github.io/vue-country-code/
 
 - **yarn**:
   ```bash
-    yarn add vue-country-code
+    yarn add vue-country-code-select
   ```
 - **npm**:
   ```bash
-    npm i --save vue-country-code
+    npm i --save vue-country-code-select
   ```
 
 ## Usage
@@ -21,7 +21,7 @@ Checkout Demo at [Github pages](https://hantrongbinh.github.io/vue-country-code/
 
   ```javascript
   import Vue from "vue";
-  import VueCountryCode from "vue-country-code";
+  import VueCountryCode from "vue-country-code-select";
 
   Vue.use(VueCountryCode);
   ```
@@ -60,6 +60,8 @@ Checkout Demo at [Github pages](https://hantrongbinh.github.io/vue-country-code/
 | Property value            | Type      | Default value                 | Description                                                                 |
 | ------------------------- | --------- | ----------------------------- | --------------------------------------------------------------------------- |
 | `defaultCountry`          | `string`  | `''`                          | Default country, will override the country fetched from IP address of user  |
+| `searchPlaceholderText`          | `string`  | `''`                          | Default text - "Search country"                                      |
+| `enableSearchField`          | `Boolean`  | `''`                          | Default "false"                                                         |
 | `disabledFetchingCountry` | `Boolean` | false                         | Disable fetching current country based on IP address of user                |
 | `enabledCountryCode`      | `Boolean` | `false`                       | Enable country code in the input                                            |
 | `enabledFlags`            | `Boolean` | `true`                        | Enable flags in the input                                                   |
@@ -76,7 +78,7 @@ Checkout Demo at [Github pages](https://hantrongbinh.github.io/vue-country-code/
 
 ## Highlights & Credits
 
-- Forked from [EducationLink/vue-tel-input](https://github.com/EducationLink/vue-tel-input).
+- Forked from [hantrongbinh/vue-country-code](https://github.com/hantrongbinh/vue-country-code).
 - Vue app created by [vue-cli](https://github.com/vuejs/vue-cli).
 - Telephone Number parsing, validation by [libphonenumber-js](https://catamphetamine.github.io/libphonenumber-js/).
 - Country Codes data from [intl-tel-input](https://github.com/jackocnr/intl-tel-input/blob/master/src/js/data.js).

@@ -21,6 +21,20 @@
         <span class="dropdown-arrow">{{ open ? "▲" : "▼" }}</span>
       </span>
       <ul v-show="open" ref="list" class="dropdown-list">
+
+         <li 
+          v-if="enableSearchField" 
+          class="search-field" 
+          @click.stop
+          >
+          <input 
+            v-model="searchText"
+            :placeholder="searchPlaceholderText" 
+            style="width: 100%;" 
+            type="text" 
+          >
+        </li>
+
         <li
           class="dropdown-item"
           v-for="(pb, index) in sortedCountries"
@@ -51,6 +65,14 @@ import getCountry from "../utils/defaultCountry";
 export default {
   name: "vue-country-code",
   props: {
+    searchPlaceholderText: {
+      type: String,
+      default: 'Search country'
+    },
+    enableSearchField: {
+      type: Boolean,
+      default: false
+    },
     disabledFetchingCountry: {
       type: Boolean,
       default: false
@@ -108,12 +130,21 @@ export default {
       open: false,
       selectedIndex: null,
       typeToFindInput: "",
-      typeToFindTimer: null
+      typeToFindTimer: null,
+      typeToFindTimer: null,
+      searchText: ''
     };
   },
   computed: {
     filteredCountries() {
       // List countries after filtered
+      
+      if(this.searchText.length){
+        return allCountries.filter(country => {
+          return country.name.toLowerCase().includes(this.searchText.toLowerCase())
+        });
+      }
+
       if (this.onlyCountries.length) {
         return this.getCountries(this.onlyCountries);
       }
@@ -319,6 +350,11 @@ export default {
   border: 1px solid #bbb;
   text-align: left;
 }
+
+.vue-country-select .search-field{
+  padding: 10px;
+}
+
 .vue-country-select:focus-within {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
     0 0 8px rgba(102, 175, 233, 0.6);
