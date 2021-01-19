@@ -166,6 +166,11 @@ export default {
       return [...preferredCountries, ...this.filteredCountries];
     }
   },
+  watch: {
+    defaultCountry: function(country){
+      this.initializeCountry();
+    }
+  },
   methods: {
     initializeCountry() {
       /**
