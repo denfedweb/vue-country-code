@@ -167,7 +167,7 @@ export default {
     }
   },
   watch: {
-    defaultCountry: function(country){
+    defaultCountry: function(){
       this.initializeCountry();
     }
   },
